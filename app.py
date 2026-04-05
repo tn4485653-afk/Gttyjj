@@ -29,7 +29,7 @@ def proxy_like():
         return {"error": str(e)}, 500
 
 
-# 🔥 FIX CORS (QUAN TRỌNG)
+# 🔥 FIX CORS
 @app.after_request
 def add_cors_headers(response):
     response.headers["Access-Control-Allow-Origin"] = "*"
@@ -39,4 +39,4 @@ def add_cors_headers(response):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=8080)
